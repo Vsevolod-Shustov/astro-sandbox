@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoremIpsum from "../components/LoremIpsum.astro";
+---
+
+<Layout title="Parallax with 3D transform">
+  <main>
+    <div class="parallax">
+      <div class="parallax__layer parallax__layer--back">
+        <!-- <img src={backgroundUrl} /> -->
+      </div>
+      <div class="parallax__layer parallax__layer--base">
+        <LoremIpsum /><LoremIpsum /><LoremIpsum /><LoremIpsum /><LoremIpsum
+        /><LoremIpsum /><LoremIpsum /><LoremIpsum /><LoremIpsum /><LoremIpsum
+        /><LoremIpsum /><LoremIpsum /><LoremIpsum />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* main {
+		padding: 0.5rem;
+	} */
+  .parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 100vh 0;
+  }
+  .parallax__layer--base {
+    transform: translateZ(0);
+    color: #ccc;
+  }
+  .parallax__layer--back {
+    background-image: url("../../public/bg.jpg");
+    transform: translateZ(-2px) scale(3.03);
+  }
+</style>

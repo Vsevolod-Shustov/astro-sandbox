@@ -2,7 +2,11 @@
 
 ---
 
-<header>here be header</header>
+<header>
+  <nav>
+    <a href="/transform">3D transform</a>
+  </nav>
+</header>
 
 <style>
   header {
@@ -11,9 +15,11 @@
     position: fixed;
     top: 0;
     /*width: calc(100% - 2 * var(--padding-inline));*/
-    width: min(100%, 960px);
+    /* width: min(100%, 960px); */
     line-height: 1.5rem;
     height: 2.5rem;
     padding: var(--padding-block) var(--padding-inline);
+    background-color: white;
+    border-bottom: 1px solid black;
   }
 </style>

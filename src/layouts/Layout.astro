@@ -22,7 +22,7 @@ const { title } = Astro.props;
 	<body>
 		<Header />
 		<slot />
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
 
@@ -36,17 +36,17 @@ const { title } = Astro.props;
 	}
 	body {
 		font-size: 16px;
-		width: 100%;
+		/* width: 100%;
 		max-width: 960px;
 		margin: 1.5rem auto 0;
 		padding: var(--body-padding-block) var(--body-padding-inline) 0;
-		position: relative;
+		position: relative; */
 	}
 	p {
 		margin: 0 0 1em;
 	}
 
-	body {
+	/* body {
 		background-color: rgba(255, 0, 255, 25%);
 	}
 	header {
@@ -57,5 +57,5 @@ const { title } = Astro.props;
 	}
 	footer {
 		background-color: rgba(0, 0, 255, 25%);
-	}
+	} */
 </style>
