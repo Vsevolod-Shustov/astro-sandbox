@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Spacer from "../components/Spacer.astro";
+---
+
+<Layout title="IconList">
+  <main>
+    <Spacer />
+    <div class="iconlist">
+      <img src="/brand-html5.svg" alt="" class="icon" />
+      <img src="/brand-css3.svg" alt="" class="icon" />
+      <img src="/brand-javascript.svg" alt="" class="icon" />
+    </div>
+    <Spacer />
+  </main>
+</Layout>
+
+<script>
+  const icons = document.querySelectorAll(".icon");
+  icons.forEach((icon, index) => {
+    //icon.classList.add("jsicon");
+    icon.setAttribute("data", `nthChild: ${index + 1}`);
+  });
+</script>
+
+<style>
+  main {
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .iconlist {
+    position: relative;
+  }
+  .icon {
+    width: 64px;
+    transform: translateX(100vw);
+    animation: 1s slide-in forwards;
+  }
+  .icon:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  .icon:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  @keyframes slide-in {
+    from {
+      transform: translateX(100vw);
+    }
+
+    to {
+      transform: translateX(0vw);
+    }
+  }
+</style>
