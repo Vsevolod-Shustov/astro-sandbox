@@ -16,11 +16,29 @@ import Spacer from "../components/Spacer.astro";
 </Layout>
 
 <script>
-  const icons = document.querySelectorAll(".icon");
-  icons.forEach((icon, index) => {
-    //icon.classList.add("jsicon");
-    icon.setAttribute("data", `nthChild: ${index + 1}`);
-  });
+  console.log("Welcome, browser console!");
+  // const icons = document.querySelectorAll(".icon");
+  // icons.forEach((icon, index) => {
+  //   //icon.classList.add("jsicon");
+  //   icon.setAttribute("data", `nthChild: ${index + 1}`);
+  // });
+  const iconList = document.querySelector(".iconList")!;
+
+  if (!!window.IntersectionObserver) {
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        console.log("test");
+        if (entry.isIntersecting) {
+          console.log(entry);
+          entry.target.classList.add("isintersecting");
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    const iconList = document.querySelector(".iconlist")!;
+    console.log(iconList);
+    observer.observe(iconList);
+  }
 </script>
 
 <style>
@@ -34,12 +52,14 @@ import Spacer from "../components/Spacer.astro";
   .icon {
     width: 64px;
     transform: translateX(100vw);
+  }
+  .iconlist.isintersecting .icon {
     animation: 1s slide-in forwards;
   }
-  .icon:nth-child(2) {
+  .iconlist .icon:nth-child(2) {
     animation-delay: 0.25s;
   }
-  .icon:nth-child(3) {
+  .iconlist .icon:nth-child(3) {
     animation-delay: 0.5s;
   }
   @keyframes slide-in {
