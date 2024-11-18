@@ -1,0 +1,48 @@
+---
+
+---
+
+<div class="clock">
+  <div class="hand hand-hour"></div>
+  <div class="hand hand-minute"></div>
+  <div class="axis"></div>
+</div>
+
+<style>
+  .clock {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: relative;
+    margin: 0 auto;
+  }
+  .axis {
+    position: absolute;
+    top: 46px;
+    left: 46px;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #777;
+  }
+  .hand {
+    position: absolute;
+    transform-origin: center bottom;
+    background-color: black;
+  }
+  .hand-hour {
+    left: 48px;
+    top: 15px;
+    width: 4px;
+    height: 35px;
+    transform: rotate(112.5deg);
+  }
+  .hand-minute {
+    left: 49px;
+    top: 5px;
+    width: 2px;
+    height: 45px;
+    transform: rotate(45deg);
+  }
+</style>
